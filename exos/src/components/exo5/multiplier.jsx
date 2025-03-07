@@ -1,5 +1,4 @@
-import { useEffect } from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Multiplier = ()=>{
   const [val1, setVal1] = useState(0);
@@ -17,7 +16,7 @@ const Multiplier = ()=>{
     else
     setOutput(`Les deux nombres multipliés ne font pas ${valTarget}.`);
 
-  });
+  }, [val1, val2, valTarget]);
 
   return (
     <>
