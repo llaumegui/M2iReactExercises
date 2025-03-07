@@ -23,10 +23,13 @@ const RealTimeName = () => {
         value={lastName}
         onInput={changeLastName}
       />
-      
+
       <pre>
-        Bonjour{" "}<b>{firstName} {lastName}</b>!
-        Bienvenue sur l'application!
+        Bonjour{" "}
+        <b>
+          {firstName} {lastName}
+        </b>
+        ! Bienvenue sur l'application!
       </pre>
     </>
   );
