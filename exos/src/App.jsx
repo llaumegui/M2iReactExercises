@@ -5,9 +5,20 @@ import Listing from "./components/exo2/listing";
 import FizzBuzz from "./components/exo3/fizzbuzz";
 import RealTimeName from "./components/exo4/realTimeName";
 import Multiplier from "./components/exo5/multiplier";
+import FormRepertory from "./components/exo6/repertoryForm";
+import RepertoryTable from "./components/exo6/repertoryTable";
+import { useState } from "react";
 
 function App() {
   const width = window.screen.width;
+
+  let formContacts = [];
+  const [formArray,setFormArray] = useState([])
+  function addToRepertory(firstName,lastName){
+    formContacts.push({"firstname":firstName,"lastname":lastName});
+    setFormArray(formContacts)
+  }
+
   return (
     <>
     <div style={{width:width}}></div>
@@ -27,8 +38,14 @@ function App() {
       <h1>RealTime Name</h1>
       <RealTimeName />
       {/* Exo 5*/ }
+      <hr />
       <h1> Multiplicateur</h1>
       <Multiplier/>
+      {/* Exo 6*/ }
+      <hr />
+      <h1>Formulaire</h1>
+      <RepertoryTable contacts={formArray}/>
+      <FormRepertory parentFunction={addToRepertory}/>
     </>
   );
 }
