@@ -8,15 +8,22 @@ import Multiplier from "./components/exo5/multiplier";
 import FormRepertory from "./components/exo6/repertoryForm";
 import RepertoryTable from "./components/exo6/repertoryTable";
 import { useState } from "react";
+import LoginForm from "./components/exo7/loginForm";
 
 function App() {
   const width = window.screen.width;
 
+  // Exo 6
   let formContacts = [];
   const [formArray,setFormArray] = useState([])
   function addToRepertory(firstName,lastName){
     formContacts.push({"firstname":firstName,"lastname":lastName});
     setFormArray(formContacts)
+  }
+
+  // Exo 7
+  function printUser(username, password){
+    console.log(`username: ${username}\npassword: ${password}`);
   }
 
   return (
@@ -46,7 +53,11 @@ function App() {
       <h1>Formulaire</h1>
       <RepertoryTable contacts={formArray}/>
       <FormRepertory parentFunction={addToRepertory}/>
-    </>
+      {/* Exo 7*/ }
+      <hr />
+      <h1>Formulaire Login</h1>
+      <LoginForm parentFunction={printUser}/>
+      </>
   );
 }
 
